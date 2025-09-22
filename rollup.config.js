@@ -1,14 +1,14 @@
-import commonjs from '@rollup/plugin-commonjs'
-import json from '@rollup/plugin-json'
-import typescript from '@rollup/plugin-typescript'
-import {nodeResolve} from '@rollup/plugin-node-resolve'
+const commonjs = require('@rollup/plugin-commonjs');
+const json = require('@rollup/plugin-json');
+const typescript = require('@rollup/plugin-typescript');
+const {nodeResolve} = require('@rollup/plugin-node-resolve');
 
 const config = {
     input: 'index.js',
     output: {
         esModule: true,
         file: 'dist/index.js',
-        format: 'es',
+        format: 'cjs',
         sourcemap: true,
         inlineDynamicImports: true,
     },
@@ -21,4 +21,4 @@ const config = {
     }), nodeResolve({preferBuiltins: true})]
 }
 
-export default config;
+module.exports = config;
