@@ -1,0 +1,30 @@
+{
+  "name": "opera-addon",
+  "version": "1.0.0",
+  "description": "GitHub action for publishing extensions to Opera Add-ons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write index.js action.yml .github",
+    "format:check": "prettier --check index.js action.yml .github"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatidian1/opera-addon.git"
+  },
+  "keywords": [],
+  "author": "fatidian1",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fatidian1/opera-addon/issues"
+  },
+  "homepage": "https://github.com/fatidian1/opera-addon#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "ext-opera-upload": "^1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

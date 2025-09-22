@@ -1,0 +1,29 @@
+name: Publish Opera Add-on
+description: GitHub action for publishing extensions to Opera Add-ons
+author: fatidian1
+
+inputs:
+  package-id:
+    description: Package ID
+    required: true
+  package-path:
+    description: Path to .zip or .crx file
+    required: true
+  email:
+    description: Email for Opera Developer account
+    required: true
+  password:
+    description: Password for Opera Developer account
+    required: true
+  action:
+    description: Action to perform (publish, upload or verify)
+    required: true
+    default: publish
+
+runs:
+  using: node20
+  main: index.js
+
+branding:
+  icon: globe
+  color: red
