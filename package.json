@@ -25,6 +25,10 @@
     "ext-opera-upload": "^1.0.0"
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "prettier": "^3.6.2",
+    "rollup": "^4.52.0"
   }
 }
