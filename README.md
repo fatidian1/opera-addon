@@ -57,7 +57,7 @@ jobs:
       # - run: npm ci && npm run build
 
       - name: Publish to Opera Add-ons
-        uses: fatidian1/opera-addon@v1
+        uses: fatidian1/opera-addon@v1.0.0
         with:
           package-id: ${{ secrets.OPERA_PACKAGE_ID }}
           package-path: path/to/your-extension.zip
