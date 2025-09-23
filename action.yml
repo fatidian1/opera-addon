@@ -26,11 +26,11 @@ runs:
     - name: Populate .env file
       shell: bash
       run: |
-        echo "OPERA_ADDON_PACKAGE_ID=${{ inputs.package-id }}" >> .env &&
-        echo "OPERA_ADDON_PACKAGE_PATH=${{ inputs.package-path }}" >> .env &&
-        echo "OPERA_ADDON_EMAIL=${{ inputs.email }}" >> .env &&
-        echo "OPERA_ADDON_PASSWORD=${{ inputs.password }}" >> .env &&
-        echo "OPERA_ADDON_ACTION=${{ inputs.action }}" >> .env &&
+        echo "OPERA_ADDON_PACKAGE_ID=${{ inputs.package-id }}" >> .env
+        echo "OPERA_ADDON_PACKAGE_PATH=${{ inputs.package-path }}" >> .env
+        echo "OPERA_ADDON_EMAIL=${{ inputs.email }}" >> .env
+        echo "OPERA_ADDON_PASSWORD=${{ inputs.password }}" >> .env
+        echo "OPERA_ADDON_ACTION=${{ inputs.action }}" >> .env
     - name: Run puppeteer
       id: puppeteer-run
       uses: tj-actions/docker-run@v2
@@ -40,7 +40,7 @@ runs:
         options: >-
           -v ${{ github.workspace }}:/workspace
         args: |
-          node /workspace/dist/index.js
+          cd /workspace && node /workspace/dist/index.js
 
 branding:
   icon: globe
