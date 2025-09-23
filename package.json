@@ -22,7 +22,7 @@
   "homepage": "https://github.com/fatidian1/opera-addon#readme",
   "dependencies": {
     "@actions/core": "^1.11.1",
-    "ext-opera-upload": "^1.0.0"
+    "ext-opera-upload": "^1.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",

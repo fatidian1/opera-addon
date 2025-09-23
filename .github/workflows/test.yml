@@ -1,0 +1,18 @@
+name: Publish Opera test
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    environment: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Verify publish to Opera Add-ons
+        uses: ./action.yml
+        with:
+          email: ${{ secrets.OPERA_EMAIL }}
+          password: ${{ secrets.OPERA_PASSWORD }}
+          action: verify

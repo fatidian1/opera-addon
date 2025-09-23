@@ -4,11 +4,11 @@ author: fatidian1
 
 inputs:
   package-id:
-    description: Package ID
-    required: true
+    description: Package ID (not required for verify action)
+    required: false
   package-path:
-    description: Path to .zip or .crx file
-    required: true
+    description: Path to .zip or .crx file (not required for verify action)
+    required: false
   email:
     description: Email for Opera Developer account
     required: true
@@ -21,8 +21,17 @@ inputs:
     default: publish
 
 runs:
-  using: node20
-  main: dist/index.js
+  using: composite
+  steps:
+    - name: Run puppeteer
+      id: puppeteer-run
+      uses: tj-actions/docker-run@v2
+      with:
+        image: ghcr.io/puppeteer/puppeteer:24.22.2
+        name: opera-addon
+        args: |
+          cp ${{ github.workspace }}/dist/index.js /home/pptruser/dist/index.js
+          node /home/pptruser/dist/index.js
 
 branding:
   icon: globe
