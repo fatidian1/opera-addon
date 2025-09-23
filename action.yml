@@ -40,6 +40,8 @@ runs:
         options: >-
           -v ${{ github.workspace }}:/workspace
         args: |
+          cp /workspace/dist/index.js /home/pptruser/index.js
+          cp /workspace/.env /home/pptruser/.env
           node /workspace/dist/index.js
 
 branding:

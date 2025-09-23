@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '/workspace/.env' });
+require('dotenv').config();
 const { extOperaUpload } = require('ext-opera-upload');
 
 async function main() {
