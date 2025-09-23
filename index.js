@@ -12,7 +12,7 @@ async function main() {
     };
     await extOperaUpload(options);
   } catch (e) {
-    core.setFailed(e.message);
+    console.error(e.message);
   }
 }
 
