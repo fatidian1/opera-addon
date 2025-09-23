@@ -40,7 +40,7 @@ runs:
         options: >-
           -v ${{ github.workspace }}:/workspace
         args: |
-          cd /workspace && node /workspace/dist/index.js
+          node /workspace/dist/index.js
 
 branding:
   icon: globe
