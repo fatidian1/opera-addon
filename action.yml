@@ -37,6 +37,9 @@ runs:
     - name: Show github workspace path
       shell: bash
       run: echo ${{ github.workspace }}
+    - name: Show current path
+      shell: bash
+      run: pwd
     - name: Run puppeteer
       id: puppeteer-run
       uses: tj-actions/docker-run@v2
@@ -46,9 +49,12 @@ runs:
         options: >-
           -v ${{ github.workspace }}:/workspace
         args: |
-          cp /workspace/dist/index.js /home/pptruser/index.js
+          cp /workspace/index.js /home/pptruser/index.js
           cp /workspace/.env /home/pptruser/.env
-          node /workspace/dist/index.js
+          cp /workspace/package.json /home/pptruser/package.json
+          cp /workspace/package-lock.json /home/pptruser/package-lock.json
+          npm install
+          node index.js
 
 branding:
   icon: globe
