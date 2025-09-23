@@ -31,6 +31,12 @@ runs:
         echo "OPERA_ADDON_EMAIL=${{ inputs.email }}" >> .env
         echo "OPERA_ADDON_PASSWORD=${{ inputs.password }}" >> .env
         echo "OPERA_ADDON_ACTION=${{ inputs.action }}" >> .env
+    - name: List files
+      shell: bash
+      run: ls -la
+    - name: Show github workspace path
+      shell: bash
+      run: echo ${{ github.workspace }}
     - name: Run puppeteer
       id: puppeteer-run
       uses: tj-actions/docker-run@v2
