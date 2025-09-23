@@ -4,6 +4,7 @@
   "description": "GitHub action for publishing extensions to Opera Add-ons",
   "main": "index.js",
   "scripts": {
+    "build": "rollup --config rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write index.js action.yml .github",
     "format:check": "prettier --check index.js action.yml .github"
@@ -21,7 +22,7 @@
   },
   "homepage": "https://github.com/fatidian1/opera-addon#readme",
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "dotenv": "^17.2.2",
     "ext-opera-upload": "^1.0.1"
   },
   "devDependencies": {

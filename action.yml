@@ -23,6 +23,13 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Populate .env file
+      run: |
+        echo "OPERA_ADDON_PACKAGE_ID=${{ inputs.package-id }}" >> .env
+        echo "OPERA_ADDON_PACKAGE_PATH=${{ inputs.package-path }}" >> .env
+        echo "OPERA_ADDON_EMAIL=${{ inputs.email }}" >> .env
+        echo "OPERA_ADDON_PASSWORD=${{ inputs.password }}" >> .env
+        echo "OPERA_ADDON_ACTION=${{ inputs.action }}" >> .env
     - name: Run puppeteer
       id: puppeteer-run
       uses: tj-actions/docker-run@v2

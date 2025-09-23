@@ -1,18 +1,15 @@
-const core = require('@actions/core');
+require('dotenv').config();
 const { extOperaUpload } = require('ext-opera-upload');
 
 async function main() {
   try {
     const options = {
-      packageId: core.getInput('package-id'),
-      email: core.getInput('email'),
-      password: core.getInput('password'),
-      packagePath: core.getInput('package-path'),
-      action: core.getInput('action'),
+      packageId: process.env.OPERA_ADDON_PACKAGE_ID,
+      email: process.env.OPERA_ADDON_EMAIL,
+      password: process.env.OPERA_ADDON_PASSWORD,
+      packagePath: process.env.OPERA_ADDON_PACKAGE_PATH,
+      action: process.env.OPERA_ADDON_ACTION,
     };
-    if (!['upload', 'publish', 'verify'].includes(options.action)) {
-      throw new Error('Invalid action, must be one of: publish, verify, upload');
-    }
     await extOperaUpload(options);
   } catch (e) {
     core.setFailed(e.message);
