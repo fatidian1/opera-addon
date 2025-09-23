@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-
+      - name: List files
+        run: ls -la
       - name: Verify publish to Opera Add-ons
         uses: ./action.yml
         with:
