@@ -55,7 +55,7 @@ runs:
           -e HOME=/workspace
         args: |
           npm ci --no-audit --no-fund
-          npx puppeteer browsers install chrome --install-deps
+          npx puppeteer browsers install chrome
           node index.js
 
 branding:
