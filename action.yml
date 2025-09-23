@@ -29,9 +29,10 @@ runs:
       with:
         image: ghcr.io/puppeteer/puppeteer:24.22.2
         name: opera-addon
+        options: >-
+          -v ${{ github.workspace }}:/workspace
         args: |
-          cp ${{ github.workspace }}/dist/index.js /home/pptruser/dist/index.js
-          node /home/pptruser/dist/index.js
+          node /workspace/dist/index.js
 
 branding:
   icon: globe
