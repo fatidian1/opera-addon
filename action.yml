@@ -51,9 +51,9 @@ runs:
           --workdir /workspace
           --user $(id -u):$(id -g)
           -e NPM_CONFIG_CACHE=/workspace/.npm
+          -e PUPPETEER_CACHE_DIR=/home/pptruser/.cache/puppeteer
           -e HOME=/workspace
         args: |
-          mkdir -p /workspace/.npm
           npm ci --no-audit --no-fund
           node index.js
 
