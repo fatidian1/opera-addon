@@ -24,6 +24,7 @@ runs:
   using: composite
   steps:
     - name: Populate .env file
+      shell: bash
       run: |
         echo "OPERA_ADDON_PACKAGE_ID=${{ inputs.package-id }}" >> .env
         echo "OPERA_ADDON_PACKAGE_PATH=${{ inputs.package-path }}" >> .env
