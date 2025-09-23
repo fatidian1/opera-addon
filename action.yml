@@ -49,7 +49,7 @@ runs:
         options: >-
           -v ${{ github.workspace }}:/workspace
           --workdir /workspace
-          --user $(id -u):$(id -g)
+          --user root
           -e NPM_CONFIG_CACHE=/workspace/.npm
           -e PUPPETEER_CACHE_DIR=/home/pptruser/.cache/puppeteer
           -e HOME=/workspace
