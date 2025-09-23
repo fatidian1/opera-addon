@@ -50,8 +50,12 @@ runs:
           -v ${{ github.workspace }}:/workspace
           --workdir /workspace
           --user $(id -u):$(id -g)
+          -e NPM_CONFIG_CACHE=/workspace/.npm
+          -e PUPPETEER_CACHE_DIR=/workspace/.cache/puppeteer
+          -e HOME=/workspace
         args: |
-          npm ci
+          mkdir -p /workspace/.npm /workspace/.cache/puppeteer
+          npm ci --no-audit --no-fund
           node index.js
 
 branding:
