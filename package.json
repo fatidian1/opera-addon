@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/fatidian1/opera-addon#readme",
   "dependencies": {
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.2.3",
     "ext-opera-upload": "^1.0.1"
   },
   "devDependencies": {
