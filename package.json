@@ -31,6 +31,6 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.4",
     "prettier": "^3.6.2",
-    "rollup": "^4.52.0"
+    "rollup": "^4.52.4"
   }
 }
